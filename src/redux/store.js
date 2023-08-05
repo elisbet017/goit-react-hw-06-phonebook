@@ -14,9 +14,8 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
-  key: 'root',
+  key: 'contacts',
   storage,
-  blacklist: ['filter'],
 };
 
 const persistedContactsReducer = persistReducer(persistConfig, contactReducer);
@@ -35,26 +34,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-
-// must
-
-// {
-//   contacts: [],
-//   filter: '',
-//   _persist: {
-//       version: -1,
-//       rehydrated: true
-//   }
-// }
-
-// my
-
-// {
-//   contacts: {
-//     _persist: {
-//       version: -1,
-//       rehydrated: true
-//     }
-//   },
-//   filter: ''
-// }

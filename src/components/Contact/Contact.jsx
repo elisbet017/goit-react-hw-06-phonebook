@@ -15,7 +15,7 @@ const Contact = ({ contact: { name, number, id } }) => {
       <ButtonDelete
         type="button"
         onClick={() => {
-          dispatch(deleteContact(id));
+          dispatch(deleteContact({ id }));
         }}
       >
         Delete
